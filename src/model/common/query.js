@@ -33,6 +33,8 @@ module.exports = class extends think.Model {
     for (const v of lists) {
        if (v.create_time){
         v.create_time = moment(v.create_time).format("YYYY-MM-DD HH:mm:ss");
+      } else if(v.update_time) {
+        v.update_time = moment(v.update_time).format("YYYY-MM-DD HH:mm:ss");
       }
     }
     return lists;
